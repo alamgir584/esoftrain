@@ -19,11 +19,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Admin Routes
-// Route::prefix('admin')->group(function(){
-//     Route::get('/dashboard',[App\Http\Controllers\admin\DashboardController::class, 'index']);
-//     Route::get('/login',[App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
-    
-//});
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['namespace'=>'App\Http\Controllers\frontend'],function(){
+    Route::get('/','IndexController@index');
+    Route::get('/About-Us','AboutusController@index')->name('aboutus');
+     Route::get('/Showcase','ShowcaseController@index')->name('showcase');
+     Route::get('/Trending-Project','TrendingprojectController@index')->name('trendingproject');
+     Route::get('/Say-Hello','SayhelloController@index')->name('sayhello');
+     Route::post('/Message','SayhelloController@store')->name('store');
+     Route::get('/Case-Details','CasedetailsController@index')->name('casedetails');
+     Route::get('/News-Single','NewssingleCntroller@index')->name('newssingle');
+});
