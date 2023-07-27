@@ -29,6 +29,22 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('backend/css/style.css')}}" rel="stylesheet">
+    {{-- sweetaler and toastr --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/plugins/toastr/toastr.css') }}">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+
+    <!-- Google Font: Source Sans Pro -->
+    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> --}}
+    <!-- Font Awesome Icons -->
+    {{-- <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}"> --}}
+    <!-- overlayScrollbars -->
+    {{-- <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}"> --}}
+    <!-- Theme style -->
+    {{-- <link rel="stylesheet" href="{{asset('backend/dist/css/adminlte.min.css')}}"> --}}
+    
 </head>
 
 <body>
@@ -43,7 +59,7 @@
             </div>
         </div>
         <!-- Spinner End -->
-
+    
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
@@ -63,19 +79,21 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="{{route('admin.home')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
+                    {{-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="button.html" class="dropdown-item">Buttons</a>
                             <a href="typography.html" class="dropdown-item">Typography</a>
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
-                    </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    </div> --}}
+                    {{-- <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a> --}}
+                    <a href="{{route('company.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Company</a>
+                    <a href="{{route('contact.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Contact</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
+                    {{-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signin.html" class="dropdown-item">Sign In</a>
@@ -83,7 +101,7 @@
                             <a href="404.html" class="dropdown-item">404 Error</a>
                             <a href="blank.html" class="dropdown-item">Blank Page</a>
                         </div>
-                    </div>
+                    </div> --}}
                    
                 </div>
             </nav>
@@ -110,6 +128,112 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('backend/js/main.js')}}"></script>
+     {{-- sweetalert and toastr --}}
+    <script type="text/javascript" src="{{ asset('backend/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ asset('backend/plugins/sweetalert/sweetalert.min.js') }}"></script>
+
+
+
+
+
+
+    <script>  
+        $(document).on("click", "#delete", function(e){
+            e.preventDefault();
+            var link = $(this).attr("href");
+               swal({
+                 title: "Are you Want to delete?",
+                 text: "Once Delete, This will be Permanently Delete!",
+                 icon: "warning",
+                 buttons: true,
+                 dangerMode: true,
+               })
+               .then((willDelete) => {
+                 if (willDelete) {
+                      window.location.href = link;
+                 } else {
+                   swal("Safe Data!");
+                 }
+               });
+           });
+   </script>
+  {{-- before  logout showing alert message --}}
+    <script>  
+        $(document).on("click", "#logout", function(e){
+            e.preventDefault();
+            var link = $(this).attr("href");
+               swal({
+                 title: "Are you Want to logout?",
+                 text: "",
+                 icon: "warning",
+                 buttons: true,
+                 dangerMode: true,
+               })
+               .then((willDelete) => {
+                 if (willDelete) {
+                      window.location.href = link;
+                 } else {
+                   swal("Not Logout!");
+                 }
+               });
+           });
+   </script>
+
+
+   <script>
+       @if(Session::has('messege'))
+         var type="{{Session::get('alert-type','info')}}"
+         switch(type){
+             case 'info':
+                  toastr.info("{{ Session::get('messege') }}");
+                  break;
+             case 'success':
+                 toastr.success("{{ Session::get('messege') }}");
+                 break;
+             case 'warning':
+                toastr.warning("{{ Session::get('messege') }}");
+                 break;
+             case 'error':
+                 toastr.error("{{ Session::get('messege') }}");
+                 break;
+               }
+       @endif
+     </script>
+
+
+    <!-- DataTables  & Plugins -->
+    <script src="{{ asset('backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/jszip/jszip.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/pdfmake/pdfmake.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/pdfmake/vfs_fonts.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{ asset('backend/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+
+     <!-- Page specific script -->
+<script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>
+
 </body>
 
 </html>
