@@ -88,8 +88,26 @@
                         </div>
                     </div> --}}
                     {{-- <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a> --}}
+                    <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Company</a>
+                          <div class="dropdown-menu bg-transparent border-0">
+                              <a href="{{route('company.index')}}" class="dropdown-item">ALL COMPANY</a>
+                              <a href="{{route('company.create')}}" class="dropdown-item">ADD NEW COMPANY</a>
+                              {{-- <a href="{{route('company.edit')}}" class="dropdown-item">MANAGE COMPANY</a> --}}
+                              
+                          </div>
+                      </div>
                     <a href="{{route('company.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Company</a>
                     <a href="{{route('contact.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Contact</a>
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Product</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('product.index')}}" class="dropdown-item">ALL PRODUCT</a>
+                            <a href="{{route('product.create')}}" class="dropdown-item">ADD NEW PRODUCT</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        </div>
+                    </div>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>

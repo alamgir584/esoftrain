@@ -1,7 +1,11 @@
 @extends('layouts.admin')
 @section('admin_content')
+
         {{-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css"> --}}
     <!-- Content Wrapper. Contains page content -->
+    <body>
+        
+        <div class="container-fluid position-relative d-flex p-0">
     <div class="content">
         <!-- Navbar Start -->
     <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
@@ -30,37 +34,29 @@
         </div>
     </nav>
     <!-- Navbar End -->
-
-
-    <div class="col-sm-12 col-xl-12">
-        <div class="bg-secondary rounded h-100 p-4">
-            <h6 class="mb-4">Company</h6>
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Company Name</th>
-                        <th scope="col">Company logo</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $key => $row)
-                    <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{$row->company_name}}</td>
-                        <td><img src="{{ asset('files/company/' . $row->company_logo) }}"
-                            width="100" height="30"></td>
-                            <td>
-                        <a href="{{route('company.edit',$row->id)}}" class="btn btn-info btn-sm " ><i class="fas fa-edit"></i></a>
-                        <a href="{{route('company.delete',$row->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="fas fa-trash"></i></a>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+    {{-- <div class="container-fluid position-relative d-flex p-0"> --}}
+        <div class="col-sm-12 col-xl-8">
+            <form action="{{route('company.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Add New Company</h6>
+                <label for="formFile" class="form-label">Company Name</label>
+                <div class="form-floating mb-3">
+                    
+                <input type="text" class="form-control" name="company_name" value="{{ old('company_name') }}" required="" placeholder="Title">
+                <label for="floatingInput">Company Name</label>
+                </div>
+                <div class="form-floating">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Company logo</label>
+                        <input class="form-control bg-dark" type="file"  name="company_logo" value="{{ old('company_logo') }}" required="">
+                    </div>
+                </div>
+                <button class="btn btn-info ml-2" type="submit">Submit</button>
+            </div>
+        </form>
         </div>
-    </div>
 
+</body>
 
 @endsection

@@ -15,20 +15,20 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('thumbnail');
-            $table->string('image_client');
-            $table->string('image_concept');
-            $table->string('image_service');
-            $table->string('image_result');
-            $table->string('client_title');
-            $table->string('client_details');
-            $table->string('concept_title');
-            $table->string('concept_details');
-            $table->string('service_title');
-            $table->string('service_details');
-            $table->string('result_title');
-            $table->string('result_details');
+            $table->string('name')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('image_client')->nullable();
+            $table->string('image_concept')->nullable();
+            $table->string('image_service')->nullable();
+            $table->string('image_result')->nullable();
+            $table->string('client_title')->nullable();
+            $table->string('client_details')->nullable();
+            $table->string('concept_title')->nullable();
+            $table->string('concept_details')->nullable();
+            $table->string('service_title')->nullable();
+            $table->string('service_details')->nullable();
+            $table->string('result_title')->nullable();
+            $table->string('result_details')->nullable();
             $table->timestamps();
         });
     }

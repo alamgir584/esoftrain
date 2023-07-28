@@ -15,17 +15,26 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware'=>'is_admin'
     // });
 
         //Company Routes
-        Route::prefix('company')->group(function () {
+        Route::prefix('admin/company')->group(function () {
             Route::get('/','CompanyController@index')->name('company.index');
+            Route::get('/create','CompanyController@create')->name('company.create');
             Route::post('/store','CompanyController@store')->name('company.store');
             Route::get('/delete/{id}','CompanyController@delete')->name('company.delete');
-            Route::get('/edit/{id}','CompanyController@edit');
-            Route::post('/update','CompanyController@update')->name('company.update');
+            Route::get('/edit/{id}','CompanyController@edit')->name('company.edit');
+            Route::post('/update/{id}','CompanyController@update')->name('company.update');
         });
-                //Contact Routes
-                Route::prefix('contact')->group(function () {
-                    Route::get('/','ContactController@index')->name('contact.index');
+            //Contact Routes
+        Route::prefix('contact')->group(function () {
+            Route::get('/','ContactController@index')->name('contact.index');
                     
-                });
-
+        });
+        //Product Routes
+        Route::prefix('product')->group(function () {
+            Route::get('/','ProductController@index')->name('product.index');
+            Route::get('/create','ProductController@create')->name('product.create');
+            Route::post('/store','ProductController@store')->name('product.store');
+            Route::get('/delete/{id}','ProductController@delete')->name('product.delete');
+            Route::get('/edit/{id}','ProductController@edit')->name('product.edit');
+            Route::post('/update/{id}','ProductController@update')->name('product.update');
+        });
 });
