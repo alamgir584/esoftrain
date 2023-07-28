@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('thumbnail')->nullable();
+            $table->string('image_client_main')->nullable();
             $table->string('image_client')->nullable();
             $table->string('image_concept')->nullable();
             $table->string('image_service')->nullable();
