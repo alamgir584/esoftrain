@@ -10,7 +10,8 @@ class SayhelloController extends Controller
 {
     public function index()
     {
-        return view('frontend.sayhello');
+        $company=DB::table('companies')->get();
+        return view('frontend.sayhello',compact('company'));
     }
     public function store(Request $request)
     {

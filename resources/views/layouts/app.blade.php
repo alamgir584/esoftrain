@@ -143,31 +143,13 @@
 <section class="logos">
     <div class="container">
       <ul>
+        @foreach ($company as  $row)
         <li class="wow fadeInUp">
-          <figure> <img src="{{asset('frontend/images/logo01.jpg')}}" alt="Image">
-            <h6>BIRD DIGITAL INC.</h6>
+          <figure> <img src="{{asset('files/company/'.$row->company_logo)}}" alt="{{$row->company_logo}}">
+            <h6>{{$row->company_name}}</h6>
           </figure>
         </li>
-        <li class="wow fadeInUp">
-          <figure> <img src="{{asset('frontend/images/logo02.jpg')}}" alt="Image">
-            <h6>FOX ENTERTAINMENT</h6>
-          </figure>
-        </li>
-        <li class="wow fadeInUp">
-          <figure> <img src="{{asset('frontend/images/logo03.jpg')}}" alt="Image">
-            <h6>EAGLE SOLUTIONS</h6>
-          </figure>
-        </li>
-        <li class="wow fadeInUp">
-          <figure> <img src="{{asset('frontend/images/logo04.jpg')}}" alt="Image">
-            <h6>DEERS MEDICAL INC.</h6>
-          </figure>
-        </li>
-        <li class="wow fadeInUp">
-          <figure> <img src="{{asset('frontend/images/logo05.jpg')}}" alt="Image">
-            <h6>BIRD NATURAL PARKS</h6>
-          </figure>
-        </li>
+        @endforeach
       </ul>
     </div>
     <!-- end container -->

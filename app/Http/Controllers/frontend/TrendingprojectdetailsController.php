@@ -5,11 +5,11 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
-class TrendingprojectController extends Controller
+
+class TrendingprojectdetailsController extends Controller
 {
-    public function index()
-    {
+    function index()  {
         $company=DB::table('companies')->get();
-        return view('frontend.trendingproject',compact('company'));
+        return view('frontend.trendingprojectdetails',compact('company'));
     }
 }

@@ -78,6 +78,15 @@
          <!-- end filter-bar -->
          </div>
          <ul>
+
+          {{-- <li class="wow fadeInUp one">
+            <figure data-tilt> <img src="{{asset('files/product/'.$product->thumbnail)}}" alt="{{$product->name}}" class="thumb">
+              <figcaption> 
+                <h3>{{ $product->name }}</h3>
+                <small>UI-UX Design, WordPress</small> <a href="{{route('casedetails')}}">CASE DETAILS</a> </figcaption>
+            </figure>
+          </li> --}}
+
           <li class="wow fadeInUp one">
             <figure data-tilt> <img src="{{asset('frontend/images/works01.jpg')}}" alt="Image" class="thumb">
               <figcaption> <img src="{{asset('frontend/images/logo-brand.png')}}" alt="Image" class="brand">

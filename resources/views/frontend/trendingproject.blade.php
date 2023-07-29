@@ -35,7 +35,7 @@
               <h2 class="post-title">Lessons from the Property Brothers</h2>
               <small class="post-date">February 21,2018</small>
               <p class="post-intro">Each product requires individual approach. Partnering up with small and big companies, we struggle for success of their products together. Staying connected with our clients helps us reach the goal and implement ideas.</p>
-              <a href="{{route('newssingle')}}" class="post-link">READ MORE</a>
+              <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
                  </div>
                  <!-- end post-content -->
              </div>
@@ -56,7 +56,7 @@
                      </ul>
               <small class="post-date">February 21,2018</small>
               <p class="post-intro">Each product requires individual approach. Partnering up with small and big companies, we struggle for success of their products together. Staying connected with our clients helps us reach the goal and implement ideas.</p>
-              <a href="{{route('newssingle')}}" class="post-link">READ MORE</a>
+              <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
                  </div>
                  <!-- end post-content -->
              </div>
@@ -77,7 +77,7 @@
                      </ul>
               <small class="post-date">February 21,2018</small>
               <p class="post-intro">Each product requires individual approach. Partnering up with small and big companies, we struggle for success of their products together. Staying connected with our clients helps us reach the goal and implement ideas.</p>
-              <a href="{{route('newssingle')}}" class="post-link">READ MORE</a>
+              <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
                  </div>
                  <!-- end post-content -->
              </div>
@@ -98,7 +98,7 @@
                      </ul>
               <small class="post-date">February 21,2018</small>
               <p class="post-intro">Each product requires individual approach. Partnering up with small and big companies, we struggle for success of their products together. Staying connected with our clients helps us reach the goal and implement ideas.</p>
-              <a href="{{route('newssingle')}}" class="post-link">READ MORE</a>
+              <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
                  </div>
                  <!-- end post-content -->
              </div>
@@ -119,7 +119,7 @@
                      </ul>
               <small class="post-date">February 21,2018</small>
               <p class="post-intro">Each product requires individual approach. Partnering up with small and big companies, we struggle for success of their products together. Staying connected with our clients helps us reach the goal and implement ideas.</p>
-              <a href="{{route('newssingle')}}" class="post-link">READ MORE</a>
+              <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
                  </div>
                  <!-- end post-content -->
              </div>

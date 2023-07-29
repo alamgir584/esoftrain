@@ -108,7 +108,7 @@ class ProductController extends Controller
             'image_result'=>$result_image,
         ]);
     
-        $notification=array('messege' =>'Company Inserted' ,'alert-type'=>'success' );
+        $notification=array('messege' =>'Product Inserted' ,'alert-type'=>'success' );
         return redirect()->back()->with($notification);
     }
     function edit() {

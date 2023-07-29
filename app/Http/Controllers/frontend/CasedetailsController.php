@@ -4,11 +4,12 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB;
 class CasedetailsController extends Controller
 {
     public function index()
     {
-        return view('frontend.casedetails');
+        $company=DB::table('companies')->get();
+        return view('frontend.casedetails',compact('company'));
     }
 }

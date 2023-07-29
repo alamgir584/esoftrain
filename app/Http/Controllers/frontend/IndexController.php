@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use DB;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $product=DB::table('products')->latest()->first();
+        $company=DB::table('companies')->get();
+        return view('frontend.index',compact('product','company'));
     }
 }
