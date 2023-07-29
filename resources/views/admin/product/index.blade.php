@@ -45,7 +45,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($data as $key => $row)
+                    @foreach ($product as $key => $row)
                     <tr>
                         <td>{{ $key + 1 }}</td>
                         <td>{{$row->name}}</td>

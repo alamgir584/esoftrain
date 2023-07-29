@@ -18,8 +18,8 @@ class ProductController extends Controller
         $this->middleware('auth');
     }
     function index(){
-        $data=DB::table('products')->get();
-        return view('admin.product.index',compact('data'));
+        $product=Product::all();
+        return view('admin.product.index', compact('product'));
     }
     function create() {
         return view('admin.product.create');
@@ -40,15 +40,15 @@ class ProductController extends Controller
 
         // for product main thumbnail
         $thumbnail=$request->file('thumbnail');
-        $name_gen=hexdec(uniqid()).'.'.$thumbnail->getClientOriginalExtension();
-        Image::make($thumbnail)->resize(514,660)->save('files/product/'.$name_gen);
-        $thumbnail_image='files/Product/'.$name_gen;
+        $name_gen_thumbnail=hexdec(uniqid()).'.'.$thumbnail->getClientOriginalExtension();
+        Image::make($thumbnail)->resize(514,660)->save('files/product/'.$name_gen_thumbnail);
+        $thumbnail_image='files/Product/'.$name_gen_thumbnail;
 
         // for product client main image
         $image_client_main=$request->file('image_client_main');
-        $name_gen=hexdec(uniqid()).'.'.$image_client_main->getClientOriginalExtension();
-        Image::make($image_client_main)->resize(2560,1434)->save('files/product/'.$name_gen);
-        $client_main_image='files/Product/'.$name_gen;
+        $name_gen_client_main=hexdec(uniqid()).'.'.$image_client_main->getClientOriginalExtension();
+        Image::make($image_client_main)->resize(2560,1434)->save('files/product/'.$name_gen_client_main);
+        $client_main_image='files/Product/'.$name_gen_client_main;
 
         // for product client multi image
         $image_client=$request->file('image_client');
