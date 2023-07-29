@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('thumbnail')->nullable();
             $table->string('image_client_main')->nullable();
-            $table->string('image_client')->nullable();
-            $table->string('image_concept')->nullable();
+            $table->json('image_client')->nullable();
+            $table->json('image_concept')->nullable();
             $table->string('image_service')->nullable();
-            $table->string('image_result')->nullable();
+            $table->json('image_result')->nullable();
             $table->string('client_title')->nullable();
             $table->string('client_details')->nullable();
             $table->string('concept_title')->nullable();

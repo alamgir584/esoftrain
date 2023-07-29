@@ -19,7 +19,6 @@ class CompanyController extends Controller
     }
     function index(){
         $data=DB::table('companies')->get();
-        
         return view('admin.company.index',compact('data'));
     }
     function create() {

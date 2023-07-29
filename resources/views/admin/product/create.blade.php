@@ -36,7 +36,7 @@
     <!-- Navbar End -->
     {{-- <div class="container-fluid position-relative d-flex p-0"> --}}
         <div class="col-sm-12 col-xl-8">
-            <form action="{{route('company.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Add New Product</h6>
@@ -48,12 +48,12 @@
                 <div class="form-floating">
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Product Main Image</label>
-                        <input class="form-control bg-dark" type="file"  name="thumbnail" value="{{ old('thumbnail') }}" required="">
+                        <input class="form-control bg-dark" type="file"  name="thumbnail" required="">
                     </div>
                 </div>
 
                  {{-- Client single image and 2 image --}}
-                 <label for="text" class="form-label">Product Client Title</label>
+                <label for="text" class="form-label">Product Client Title</label>
                 <div class="form-floating mb-3">   
                     <input type="text" class="form-control" name="client_title" value="{{ old('client_title') }}" required="" >
                     <label for="floatingInput">Product Client Title</label>
@@ -63,23 +63,23 @@
                     <input type="text" class="form-control" name="client_details" value="{{ old('client_details') }}" required="" >
                     <label for="floatingInput">Product Client Details</label>
                 </div>
-                <div class="form-floating">
+                  <div class="form-floating">
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Product Client Main Image</label>
                         <input class="form-control bg-dark" type="file"  name="image_client_main" value="{{ old('image_client_main') }}" required="">
                     </div>
                 </div>
-                <div class="form-floating">
+               <div class="form-floating">
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Product Client Image</label>
-                        <input class="form-control bg-dark" type="file"  name="image_client" value="{{ old('image_client') }}" required="">
+                        <input class="form-control bg-dark" type="file"  name="image_client[]" value="{{ old('image_client') }}" required="" multiple>
                     </div>
                 </div>
 
                   {{-- concept 4 image--}}
                 <label for="text" class="form-label">Product Concept Title</label>
                 <div class="form-floating mb-3">   
-                    <input type="text" class="form-control" name="client_title" value="{{ old('client_title') }}" required="" >
+                    <input type="text" class="form-control" name="concept_title" value="{{ old('client_title') }}" required="" >
                     <label for="floatingInput">Product Concept Title</label>
                 </div>
                 <label for="text" class="form-label">Product Concept Detasils</label>
@@ -90,7 +90,7 @@
                 <div class="form-floating">
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Product Concept Image</label>
-                        <input class="form-control bg-dark" type="file"  name="image_concept" value="{{ old('image_concept') }}" required="">
+                        <input class="form-control bg-dark" type="file"  name="image_concept[]" value="{{ old('image_concept') }}" required="" multiple>
                     </div>
                 </div>
 
@@ -126,11 +126,9 @@
                     <div class="form-floating">
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Product Result Image</label>
-                            <input class="form-control bg-dark" type="file"  name="image_result" value="{{ old('image_result') }}" required="">
+                            <input class="form-control bg-dark" type="file"  name="image_result[]" value="{{ old('image_result') }}" required="" multiple>
                         </div>
                     </div>
-    
-
                 <button class="btn btn-info ml-2" type="submit">Submit</button>
             </div>
         </form>
