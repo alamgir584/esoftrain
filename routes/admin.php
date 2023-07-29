@@ -37,4 +37,13 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware'=>'is_admin'
             Route::get('/edit/{id}','ProductController@edit')->name('product.edit');
             Route::post('/update/{id}','ProductController@update')->name('product.update');
         });
+        //Trending Project Routes
+        Route::prefix('admin/trending-project')->group(function () {
+            Route::get('/','TrendingprojectController@index')->name('trendingproject.index');
+            Route::get('/create','TrendingprojectController@create')->name('trendingproject.create');
+            Route::post('/store','TrendingprojectController@store')->name('trendingproject.store');
+            Route::get('/delete/{id}','TrendingprojectController@delete')->name('trendingproject.delete');
+            Route::get('/edit/{id}','TrendingprojectController@edit')->name('trendingproject.edit');
+            Route::post('/update/{id}','TrendingprojectController@update')->name('trendingproject.update');
+        });
 });

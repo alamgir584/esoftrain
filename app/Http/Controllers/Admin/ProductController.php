@@ -94,8 +94,8 @@ class ProductController extends Controller
             'name' => $request->name,
             'client_title' => $request->client_title,
             'client_details' => $request->client_details,
-            'concept_title' => $request->client_title,
-            'concept_details' => $request->client_details,
+            'concept_title' => $request->concept_title,
+            'concept_details' => $request->concept_details,
             'service_title' => $request->service_title,
             'service_details' => $request->service_details,
             'result_title' => $request->result_title,
@@ -118,7 +118,46 @@ class ProductController extends Controller
     function update() {
         
     }
-    function delete() {
-        
+    function delete($id) {
+        $product=DB::table('products')->where('id',$id)->first();  //product data get
+        if (File::exists('files/product/'.$product->thumbnail)) {
+              FIle::delete('files/product/'.$product->thumbnail);
+        }
+        if (File::exists('files/product/'.$product->image_client_main)) {
+            FIle::delete('files/product/'.$product->image_client_main);
+      }
+
+        $image_client=json_decode($product->image_client,true);
+        if (isset($image_client)) {
+             foreach($image_client as $key => $client_image){
+                if (File::exists('files/product/'.$client_image)) {
+                    FIle::delete('files/product/'.$client_image);
+                }
+             }
+        }
+        $image_concept=json_decode($product->image_concept,true);
+        if (isset($image_concept)) {
+             foreach($image_concept as $key => $concept_image){
+                if (File::exists('files/product/'.$concept_image)) {
+                    FIle::delete('files/product/'.$concept_image);
+                }
+             }
+        }
+        if (File::exists('files/product/'.$product->image_service)) {
+            FIle::delete('files/product/'.$product->image_service);
+      }
+      $image_result=json_decode($product->image_result,true);
+      if (isset($image_result)) {
+           foreach($image_result as $key => $result_image){
+              if (File::exists('files/product/'.$result_image)) {
+                  FIle::delete('files/product/'.$result_image);
+              }
+           }
+      }
+
+        DB::table('products')->where('id',$id)->delete();
+       $notification=array('messege' => 'Product Deleted!', 'alert-type' => 'success');
+       return redirect()->back()->with($notification);
     }
+        
 }
