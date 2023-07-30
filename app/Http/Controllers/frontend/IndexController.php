@@ -13,6 +13,7 @@ class IndexController extends Controller
     {
         $product=DB::table('products')->get();
         $company=DB::table('companies')->get();
-        return view('frontend.index',compact('product','company'));
+        $detailscategory=DB::table('detailscategories')->get();
+        return view('frontend.index',compact('product','company','detailscategory'));
     }
 }

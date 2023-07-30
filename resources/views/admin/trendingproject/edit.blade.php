@@ -50,7 +50,7 @@
                     <div class="form-floating">
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Project Image</label>
-                            <input class="form-control bg-dark" type="file"  name="thumbnail" value="{{$data->thumbnail}}" required="">
+                            <input class="form-control bg-dark" type="file"  name="thumbnail" value="{{$data->thumbnail}}" >
                         </div>
                     </div>
                     <div class="form-floating">

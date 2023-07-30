@@ -181,12 +181,14 @@
           <!-- end col-5 -->
           <div class="col-lg-7">
             <div class="row inner">
-              <div class="col-md-4 wow fadeInUp"> <img src="{{asset('frontend/images/icon01.png')}}" alt="Image">
-                <h4>USER INTERFACE & EXPERIENCE</h4>
-                <p>Unicord provides a fantastic living experience.</p>
+
+              @foreach ($detailscategory as $row)
+              <div class="col-md-4 wow fadeInUp"> <img src="{{asset('files/category/'.$row->category_logo)}}" alt="{{$row->category_name}}">
+                <h4>{{$row->category_name}}</h4>
+                <p>{{$row->category_details}}</p>
                 <a href="#">LEARN MORE</a> </div>
               <!-- end col-4 -->
-              <div class="col-md-4 wow fadeInUp"> <img src="{{asset('frontend/images/icon02.png')}}" alt="Image">
+              {{-- <div class="col-md-4 wow fadeInUp"> <img src="{{asset('frontend/images/icon02.png')}}" alt="Image">
                 <h4>USER FRIENDLY CMS SYSTEMS</h4>
                 <p>Website and add some advanced lacks.</p>
                 <a href="#">LEARN MORE</a> </div>
@@ -205,7 +207,8 @@
                 <h4>VIDEO EDITION & TV COMMERCIALS</h4>
                 <p>Website and add some advanced functionality</p>
                 <a href="#">LEARN MORE</a> </div>
-              <!-- end col-4 --> 
+              <!-- end col-4 -->  --}}
+              @endforeach
             </div>
             <!-- end row inner --> 
           </div>

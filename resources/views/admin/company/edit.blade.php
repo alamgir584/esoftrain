@@ -46,7 +46,7 @@
                     <div class="form-floating">
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Company logo</label>
-                            <input class="form-control bg-dark" type="file"  name="company_logo" value="{{$data->company_logo}}" required="">
+                            <input class="form-control bg-dark" type="file"  name="company_logo" value="{{$data->company_logo}}" >
                         </div>
                     </div>
                     <div class="form-floating">
