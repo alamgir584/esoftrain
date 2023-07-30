@@ -10,10 +10,6 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware'=>'is_admin'
     // Route::get('/admin/change-password', 'AdminController@changepassword')->name('admin.password.change');
     // Route::post('/admin/change-update', 'AdminController@updatepassword')->name('admin.password.update');
 
-    // Route::group(['prefix'=>'company'],function(){
-    //     Route::get('/', 'CompanyController@index')->name('company.index');
-    // });
-
         //Company Routes
         Route::prefix('admin/company')->group(function () {
             Route::get('/','CompanyController@index')->name('company.index');
@@ -47,12 +43,21 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware'=>'is_admin'
             Route::post('/update/{id}','TrendingprojectController@update')->name('trendingproject.update');
         });
         //Single Category Routes
-         Route::prefix('admin/category')->group(function () {
+         Route::prefix('admin/single-category')->group(function () {
             Route::get('/','SinglecategoryController@index')->name('singlecategory.index');
             Route::get('/create','SinglecategoryController@create')->name('singlecategory.create');
             Route::post('/store','SinglecategoryController@store')->name('singlecategory.store');
             Route::get('/delete/{id}','SinglecategoryController@delete')->name('singlecategory.delete');
             Route::get('/edit/{id}','SinglecategoryController@edit')->name('singlecategory.edit');
             Route::post('/update/{id}','SinglecategoryController@update')->name('singlecategory.update');
+        });
+        //Details category Routes
+        Route::prefix('admin/details-company')->group(function () {
+            Route::get('/','DetailscategoryController@index')->name('detailscategory.index');
+            Route::get('/create','DetailscategoryController@create')->name('detailscategory.create');
+            Route::post('/store','DetailscategoryController@store')->name('detailscategory.store');
+            Route::get('/delete/{id}','DetailscategoryController@delete')->name('detailscategory.delete');
+            Route::get('/edit/{id}','DetailscategoryController@edit')->name('detailscategory.edit');
+            Route::post('/update/{id}','DetailscategoryController@update')->name('detailscategory.update');
         });
 });

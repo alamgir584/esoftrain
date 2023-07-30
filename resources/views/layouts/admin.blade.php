@@ -97,6 +97,17 @@
                               <a href="blank.html" class="dropdown-item">Blank Page</a> --}}
                           </div>
                       </div>
+
+                      <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Details Category</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{route('detailscategory.index')}}" class="dropdown-item">ALL DETAILS CATEGORY</a>
+                                <a href="{{route('detailscategory.create')}}" class="dropdown-item">ADD NEW DETAILS CATEGORY</a>
+                                {{-- <a href="404.html" class="dropdown-item">404 Error</a>
+                                <a href="blank.html" class="dropdown-item">Blank Page</a> --}}
+                            </div>
+                        </div>
+
                     <div class="nav-item dropdown">
                       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Company</a>
                           <div class="dropdown-menu bg-transparent border-0">
