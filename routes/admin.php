@@ -46,4 +46,13 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware'=>'is_admin'
             Route::get('/edit/{id}','TrendingprojectController@edit')->name('trendingproject.edit');
             Route::post('/update/{id}','TrendingprojectController@update')->name('trendingproject.update');
         });
+        //Single Category Routes
+         Route::prefix('admin/category')->group(function () {
+            Route::get('/','SinglecategoryController@index')->name('singlecategory.index');
+            Route::get('/create','SinglecategoryController@create')->name('singlecategory.create');
+            Route::post('/store','SinglecategoryController@store')->name('singlecategory.store');
+            Route::get('/delete/{id}','SinglecategoryController@delete')->name('singlecategory.delete');
+            Route::get('/edit/{id}','SinglecategoryController@edit')->name('singlecategory.edit');
+            Route::post('/update/{id}','SinglecategoryController@update')->name('singlecategory.update');
+        });
 });

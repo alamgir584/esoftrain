@@ -11,7 +11,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $product=DB::table('products')->latest()->first();
+        $product=DB::table('products')->get();
         $company=DB::table('companies')->get();
         return view('frontend.index',compact('product','company'));
     }

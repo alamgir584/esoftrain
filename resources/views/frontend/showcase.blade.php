@@ -46,7 +46,18 @@
      </div>
      <!-- end container -->
       <ul>
+        @foreach ($product as $row)
+              
+          
         <li class="wow fadeInUp one">
+          <figure data-tilt> <img src="{{asset($row->thumbnail)}}" alt="{{$row->name}}" class="thumb">
+            {{-- ai image path bola dewa ache tai avabe --}}
+            <figcaption> <img src="{{asset('frontend/images/logo-brand.png')}}" alt="Image" class="brand">
+              <h3>{{$row->name}}</h3>
+              <small>UI-UX Design, WordPress</small> <a href="{{route('casedetails',$row->id)}}">CASE DETAILS</a> </figcaption>
+          </figure>
+        </li>
+        {{-- <li class="wow fadeInUp one">
           <figure data-tilt> <img src="{{asset('frontend/images/works01.jpg')}}" alt="Image" class="thumb">
             <figcaption> <img src="{{asset('frontend/images/logo-brand.png')}}" alt="Image" class="brand">
               <h3>Yellow Ginger</h3>
@@ -108,7 +119,8 @@
               <h3>Moto Wheel</h3>
               <small>Branding, Print Design</small> <a href="{{route('casedetails')}}">CASE DETAILS</a> </figcaption>
           </figure>
-        </li>
+        </li> --}}
+        @endforeach
       </ul>
     </section>
     <!-- end works -->

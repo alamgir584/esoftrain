@@ -49,7 +49,7 @@
                     <tr>
                         <td>{{ $key + 1 }}</td>
                         <td>{{$row->name}}</td>
-                        <td><img src="{{ asset('files/product/' . $row->thumbnail) }}"width="100" height="30"></td>
+                        <td><img src="{{ asset($row->thumbnail) }}"width="100" height="30"></td>
                         <td>
                         <a href="{{route('product.edit',$row->id)}}" class="btn btn-info btn-sm " ><i class="fas fa-edit"></i></a>
                         <a href="{{route('product.delete',$row->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="fas fa-trash"></i></a>

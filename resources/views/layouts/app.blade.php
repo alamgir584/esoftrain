@@ -109,7 +109,7 @@
   <nav class="navbar">
     <div class="logo"> <a href="{{url('/')}}"><img src="{{asset('frontend/images/esoftrainLogo.png')}}" alt="Image"></a> </div>
     <!-- end logo -->
-    <div class="email-us">Say <a href="http://www.esoftrain.com/"><span>hello</span>@esoftrain.com</a></div>
+    <div class="email-us">Say <a href="{{route('sayhello')}}"><span>hello</span>@esoftrain.com</a></div>
     <!-- end email-us -->
     {{-- <div class="languages"> <a href="#" class="active">EN</a> <a href="#">RU</a> </div> --}}
     <!-- end languages -->
@@ -124,7 +124,7 @@
 
 
   <ul class="social-media">
-    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=100092250554466&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
     {{-- <li><a href="#"><i class="fa fa-twitter"></i></a></li>
     <li><a href="#"><i class="fa fa-dribbble"></i></a></li> --}}
     <li><a href="https://www.linkedin.com/company/esoftrain"><i class="fa fa-linkedin"></i></a></li>
@@ -163,11 +163,9 @@
         talk to us?</h2>
       <h5>Say hello@esoftrain.com </h5>
       <ul>
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-behance"></i></a></li>
-        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100092250554466&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/esoftrain"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UCcCxCb7wQVoJ4IyY92vXv3A"><i class="fa fa-youtube-play"></i></a></li>
       </ul>
       <span>© 2023 esoftrain | All Rights Reserved</span> </div>
     <!-- end container --> 

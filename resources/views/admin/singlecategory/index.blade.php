@@ -34,13 +34,12 @@
 
     <div class="col-sm-12 col-xl-12">
         <div class="bg-secondary rounded h-100 p-4">
-            <h6 class="mb-4">Company</h6>
+            <h6 class="mb-4">Category</h6>
             <table class="table table-dark">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Company Name</th>
-                        <th scope="col">Company logo</th>
+                        <th scope="col">Category Name</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -48,18 +47,16 @@
                     @foreach ($data as $key => $row)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td>{{$row->company_name}}</td>
-                        <td><img src="{{ asset('files/company/' . $row->company_logo) }}"
-                            width="100" height="30"></td>
-                            <td>
-                        <a href="{{route('company.edit',$row->id)}}" class="btn btn-info btn-sm " ><i class="fas fa-edit"></i></a>
-                        <a href="{{route('company.delete',$row->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="fas fa-trash"></i></a>
+                        <td>{{$row->category_name}}</td>
+                        <td>
+                        <a href="{{route('singlecategory.edit',$row->id)}}" class="btn btn-info btn-sm " ><i class="fas fa-edit"></i></a>
+                        <a href="{{route('singlecategory.delete',$row->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {{$data->links()}}   
+            {{-- {{$data->links()}}    --}}
              {{-- //for paginate --}}
         </div>
     </div>

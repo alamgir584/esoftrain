@@ -10,6 +10,7 @@ class TrendingprojectController extends Controller
     public function index()
     {
         $company=DB::table('companies')->get();
-        return view('frontend.trendingproject',compact('company'));
+        $trendingproject=DB::table('trendingprojects')->get();
+        return view('frontend.trendingproject',compact('company','trendingproject'));
     }
 }

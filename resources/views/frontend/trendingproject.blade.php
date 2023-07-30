@@ -19,27 +19,30 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-8">
+                @foreach ($trendingproject as $row)
              <div class="post wow fadeIn">
-                 <figure class="post-image"> <img src="{{asset('frontend/images/news01.jpg')}}" alt="Image"></figure>
+                 <figure class="post-image"> <img src="{{asset('files/trendingproject/'.$row->thumbnail)}}" alt="{{$row->title}}"></figure>
                  <div class="post-content">
                  <div class="author">
-                  <img src="{{asset('frontend/images/avatar01.jpg')}}" alt="Image">
-                  <span>by <b>Jack Daniels</b></span>
+                  {{-- <img src="{{asset('frontend/images/avatar01.jpg')}}" alt="Image"> --}}
+                  <span>by <b>{{Auth::user()->name}}</b></span>
               </div>
               <!-- end author -->
-                     <ul class="post-categories">
+                     {{-- <ul class="post-categories">
                      <li><a href="#">Development</a></li>
                      <li><a href="#">WordPress</a></li>
                      <li><a href="#">Design</a></li>
-                     </ul>
-              <h2 class="post-title">Lessons from the Property Brothers</h2>
-              <small class="post-date">February 21,2018</small>
-              <p class="post-intro">Each product requires individual approach. Partnering up with small and big companies, we struggle for success of their products together. Staying connected with our clients helps us reach the goal and implement ideas.</p>
-              <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
+                     </ul> --}}
+              <h2 class="post-title">{{$row->title}}</h2>
+              {{-- <small class="post-date">February 21,2018</small> --}}
+              <p class="post-intro">{{Str::limit($row->details,'400')}}</p>
+              <a href="{{route('trendingprojectdetails',$row->id)}}" class="post-link">READ MORE</a>
                  </div>
+                
                  <!-- end post-content -->
              </div>
-             <!-- end post -->
+             @endforeach
+             {{--  <!-- end post -->
               <div class="post wow fadeIn">
                  <figure class="post-image"> <img src="{{asset('frontend/images/news02.jpg')}}" alt="Image"></figure>
                  <div class="post-content">
@@ -59,7 +62,7 @@
               <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
                  </div>
                  <!-- end post-content -->
-             </div>
+            </div>
              <!-- end post -->
               <div class="post wow fadeIn">
                  <figure class="post-image"> <img src="{{asset('frontend/images/news03.jpg')}}" alt="Image"></figure>
@@ -122,7 +125,7 @@
               <a href="{{route('trendingprojectdetails')}}" class="post-link">READ MORE</a>
                  </div>
                  <!-- end post-content -->
-             </div>
+             </div> --}}
              <!-- end post -->
               <ul class="pagination wow fadeIn">
         <li class="page-item">

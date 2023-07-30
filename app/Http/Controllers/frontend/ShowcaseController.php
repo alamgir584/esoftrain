@@ -11,6 +11,7 @@ class ShowcaseController extends Controller
     public function index()
     {
         $company=DB::table('companies')->get();
-        return view('frontend.showcase',compact('company'));
+        $product=DB::table('products')->get();
+        return view('frontend.showcase',compact('company','product'));
     }
 }

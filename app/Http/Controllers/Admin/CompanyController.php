@@ -18,7 +18,8 @@ class CompanyController extends Controller
         $this->middleware('auth');
     }
     function index(){
-        $data=DB::table('companies')->get();
+        $data=Company::paginate(5);//for pagination
+        //$data=DB::table('companies')->get();
         return view('admin.company.index',compact('data'));
     }
     function create() {

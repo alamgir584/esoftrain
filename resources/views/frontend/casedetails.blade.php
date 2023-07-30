@@ -28,29 +28,31 @@
               <!-- end container -->
             </div>
       <div class="container">
+        @foreach ($casedetails as $row)
+            
         <div class="row">
           <div class="col-12 wow fadeInUp" id="case-section-1">
           <h3>Client</h3>
-          <h6>We are looking for individuals who are ready to develop daily and not afraid of difficult tasks</h6>
-          <p>So, the height and width is not fixed, and it is calculated dynamically according to the diminutions of the window. Under that div, there is another one that has the<b> ID header</b> “navigation bar”, the header is initially <em>positioned</em> relatively under div.fullscreen – however, I am trying to position it as Fixed when the top of the #header reaches the top of the browser window. So here is what I am <u>playing around</u>, it toggles the Fixed style, but it does not toggle it at the right place…</p>
+          <h6>{{$row->client_title}}</h6>
+          <p>{{$row->client_details}}</p>
             </div>
          <!-- end col-12 -->
           <div class="col-12 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case01.png')}}" alt="Image"></figure>
+            <figure><img src="{{asset($row->image_client_main)}}" alt="{{$row->name}}"></figure>
           </div>
           <!-- end col-12 -->
           <div class="col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case02.png')}}" alt="Image"></figure>
+            <figure><img src="{{asset($row->image_client)}}" alt="{{$row->name}}"></figure>
           </div>
           <!-- end col-6 -->
-          <div class="col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case03.png')}}" alt="Image"></figure>
-          </div>
+          {{-- <div class="col-md-6 wow fadeInUp">
+            <figure><img src="{{asset($row->image_client_main)}}" alt="{{$row->name}}"></figure>
+          </div> --}}
           <!-- end col-6 -->
            <div class="col-12 wow fadeInUp" id="case-section-2">
           <h3>Concept</h3>
-          <h6>We are looking for individuals who are ready to develop daily and not afraid of difficult tasks</h6>
-          <p>So, the height and width is not fixed, and it is calculated dynamically according to the diminutions of the window. Under that div, there is another one that has the<b> ID header</b> “navigation bar”, the header is initially <em>positioned</em> relatively under div.fullscreen – however, I am trying to position it as Fixed when the top of the #header reaches the top of the browser window. So here is what I am <u>playing around</u>, it toggles the Fixed style, but it does not toggle it at the right place…</p>
+          <h6>{{$row->concept_title}}</h6>
+          <p>{{$row->concept_details}}</p>
             </div>
          <!-- end col-12 -->
           <div class="col-lg-3 col-md-6 wow fadeInUp">
@@ -71,18 +73,18 @@
           <!-- end col-3 -->
            <div class="col-12 wow fadeInUp" id="case-section-3">
           <h3>Services</h3>
-          <h6>We are looking for individuals who are ready to develop daily and not afraid of difficult tasks</h6>
-          <p>So, the height and width is not fixed, and it is calculated dynamically according to the diminutions of the window. Under that div, there is another one that has the<b> ID header</b> “navigation bar”, the header is initially <em>positioned</em> relatively under div.fullscreen – however, I am trying to position it as Fixed when the top of the #header reaches the top of the browser window. So here is what I am <u>playing around</u>, it toggles the Fixed style, but it does not toggle it at the right place…</p>
+          <h6>{{$row->service_title}}</h6>
+          <p>{{$row->service_details}}</p>
             </div>
          <!-- end col-12 -->
           <div class="col-12 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case08.png')}}" alt="Image"></figure>
+            <figure><img src="{{asset($row->image_service)}}" alt="{{$row->name}}"></figure>
           </div>
           <!-- end col-12 --> 
            <div class="col-12 wow fadeInUp" id="case-section-4">
           <h3>Result</h3>
-          <h6>We are looking for individuals who are ready to develop daily and not afraid of difficult tasks</h6>
-          <p>So, the height and width is not fixed, and it is calculated dynamically according to the diminutions of the window. Under that div, there is another one that has the<b> ID header</b> “navigation bar”, the header is initially <em>positioned</em> relatively under div.fullscreen – however, I am trying to position it as Fixed when the top of the #header reaches the top of the browser window. So here is what I am <u>playing around</u>, it toggles the Fixed style, but it does not toggle it at the right place…</p>
+          <h6>{{$row->result_title}}</h6>
+          <p>{{$row->result_details}}</p>
             </div>
          <!-- end col-12 -->
          <div class="col-md-6 wow fadeInUp">
@@ -95,6 +97,7 @@
           <!-- end col-6 -->
         </div>
         <!-- end row --> 
+        @endforeach
       </div>
       <!-- end container --> 
     </section>

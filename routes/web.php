@@ -24,10 +24,10 @@ Route::group(['namespace'=>'App\Http\Controllers\frontend'],function(){
     Route::get('/','IndexController@index');
     Route::get('/About-Us','AboutusController@index')->name('aboutus');
      Route::get('/Trending-Project','TrendingprojectController@index')->name('trendingproject');
-     Route::get('/Trending-Project-Details','TrendingprojectdetailsController@index')->name('trendingprojectdetails');
+     Route::get('/Trending-Project-Details/{id}','TrendingprojectdetailsController@index')->name('trendingprojectdetails');
      Route::get('/Say-Hello','SayhelloController@index')->name('sayhello');
      Route::post('/Message','SayhelloController@store')->name('store');
      Route::get('/Showcase','ShowcaseController@index')->name('showcase');
-     Route::get('/Case-Details','CasedetailsController@index')->name('casedetails');
+     Route::get('/Case-Details/{id}','CasedetailsController@index')->name('casedetails');
      
 });

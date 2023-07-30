@@ -89,6 +89,15 @@
                     </div> --}}
                     {{-- <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a> --}}
                     <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Single Category</a>
+                          <div class="dropdown-menu bg-transparent border-0">
+                              <a href="{{route('singlecategory.index')}}" class="dropdown-item">ALL SINGLE CATEGORY</a>
+                              <a href="{{route('singlecategory.create')}}" class="dropdown-item">ADD NEW SINGLE CATEGORY</a>
+                              {{-- <a href="404.html" class="dropdown-item">404 Error</a>
+                              <a href="blank.html" class="dropdown-item">Blank Page</a> --}}
+                          </div>
+                      </div>
+                    <div class="nav-item dropdown">
                       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Company</a>
                           <div class="dropdown-menu bg-transparent border-0">
                               <a href="{{route('company.index')}}" class="dropdown-item">ALL COMPANY</a>

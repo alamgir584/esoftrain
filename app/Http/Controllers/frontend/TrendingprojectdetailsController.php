@@ -8,8 +8,9 @@ use DB;
 
 class TrendingprojectdetailsController extends Controller
 {
-    function index()  {
+    function index($id)  {
         $company=DB::table('companies')->get();
-        return view('frontend.trendingprojectdetails',compact('company'));
+        $trendingproject=DB::table('trendingprojects')->where('id',$id)->get();
+        return view('frontend.trendingprojectdetails',compact('company','trendingproject'));
     }
 }

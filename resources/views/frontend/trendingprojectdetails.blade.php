@@ -19,30 +19,33 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-10">
+              @foreach ($trendingproject as $row)
+                  
+              @endforeach
              <div class="post post-single wow fadeIn">
-                 <figure class="post-image"> <img src="{{asset('frontend/images/news01.jpg')}}" alt="Image"></figure>
+                 <figure class="post-image"> <img src="{{asset('files/trendingproject/'.$row->thumbnail)}}" alt="{{$row->title}}"></figure>
                  <div class="post-content">
                  <div class="author">
-                  <img src="{{asset('frontend/images/avatar01.jpg')}}" alt="Image">
-                  <span>by <b>Jack Daniels</b></span>
+                  {{-- <img src="{{asset('frontend/images/avatar01.jpg')}}" alt="Image"> --}}
+                  <span>by <b>{{Auth::user()->name}}</b></span>
               </div>
               <!-- end author -->
-                     <ul class="post-categories">
+                     {{-- <ul class="post-categories">
                      <li><a href="#">Development</a></li>
                      <li><a href="#">WordPress</a></li>
                      <li><a href="#">Design</a></li>
-                     </ul>
-              <h2 class="post-title">Lessons from the Property Brothers</h2>
-              <small class="post-date">February 21,2018</small>
+                     </ul> --}}
+              <h2 class="post-title">{{$row->title}}</h2>
+              {{-- <small class="post-date">February 21,2018</small>
               <ul class="social-share">
                 <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
                 <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
                 <li class="youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-              </ul>
-              <p>Business is the activity of making one's living or making money by producing or buying and selling products (<strong>goods and services</strong>).Simply put, it is "any activity or enterprise entered into for profit. It does not mean it is a company, a corporation, partnership, or have any such formal organization, but it can range from a street peddler to General Motors."[5] The term is also often used colloquially (<strong>but not by lawyers or public officials</strong>) to refer to a company, but this article will not deal with that sense of the word.</p>
-                  <p> Anyone carrying on an activity that earns them a profit is doing <u>business or running a business</u>, and perhaps this is why there is a misconception that business and company is the same thing.<br>
+              </ul> --}}
+              <p>{{$row->details}}</p> {{-- (<strong>goods and services</strong>).Simply put, it is "any activity or enterprise entered into for profit. It does not mean it is a company, a corporation, partnership, or have any such formal organization, but it can range from a street peddler to General Motors."[5] The term is also often used colloquially (<strong>but not by lawyers or public officials</strong>) to refer to a company, but this article will not deal with that sense of the word.</p> --}}
+                  {{-- <p> Anyone carrying on an activity that earns them a profit is doing <u>business or running a business</u>, and perhaps this is why there is a misconception that business and company is the same thing.<br>
                     A business name structure does not separate the business entity from the owner, which means that the owner of the business is responsible and liable for all debts incurred by the business. If the business acquires debts[,] the creditor or creditors can go after your personal possessions. A business structure does not allow for corporate tax rates. The proprietor is personally taxed on all income from the business.</p>
                   <p> A company on the other hand, is a separate legal entity and provides for limited liability as well as corporate tax rates. A company structure is more complicated and expensive to set up, but offers more protection and benefits for the owner.</p>
                   <blockquote>
@@ -58,7 +61,7 @@
                     <li>Neque aliquam vestibulum morbi blandit cursus.</li>
                     <li>Enim nulla aliquet porttitor lacus.</li>
                   </ul>
-                  <p> Cooperative: Often referred to as a "co-op", a cooperative is a limited-liability business that can organize as for-profit or not-for-profit. A cooperative differs from a corporation in that it has members, not shareholders, and they share decision-making authority. Cooperatives are typically classified as either consumer cooperatives or worker cooperatives. Cooperatives are fundamental to the ideology of economic democracy. </p>
+                  <p> Cooperative: Often referred to as a "co-op", a cooperative is a limited-liability business that can organize as for-profit or not-for-profit. A cooperative differs from a corporation in that it has members, not shareholders, and they share decision-making authority. Cooperatives are typically classified as either consumer cooperatives or worker cooperatives. Cooperatives are fundamental to the ideology of economic democracy. </p> --}}
                  </div>
                  <!-- end post-content -->
              </div>
