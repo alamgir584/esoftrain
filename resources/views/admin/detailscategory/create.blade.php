@@ -40,6 +40,16 @@
             @csrf
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Add New Details Category</h6>
+
+                <label for="text" class="form-label">Category Name</label>
+                <div class="form-floating mb-3"> 
+                      <select class="form-control" name="category_id" id="category_id">
+                         @foreach($category as $row)
+                        <option value="{{ $row->id }}">{{ $row->category_name }}</option>
+                          @endforeach
+                      </select>  
+                </div>
+                
                 <label for="formFile" class="form-label">Category Name</label>
                 <div class="form-floating mb-3">    
                 <input type="text" class="form-control" name="category_name" value="{{ old('category_name') }}" required="" placeholder="Category name">

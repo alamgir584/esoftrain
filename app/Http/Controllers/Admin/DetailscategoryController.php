@@ -22,12 +22,14 @@ class DetailscategoryController extends Controller
         return view('admin.detailscategory.index',compact('data'));
     }
     function create() {
-        return view('admin.detailscategory.create');
+        $category=DB::table('singlecategories')->get();
+        return view('admin.detailscategory.create',compact('category'));
     }
     public function store(Request $request)
     {
 
         $validated = $request->validate([
+            'category_id'=>'required',
             'category_name' => 'required',
             'category_details' => 'required',
         ]);
@@ -37,6 +39,7 @@ class DetailscategoryController extends Controller
     	  $data['category_logo']='files/category/'.$photoname;
 
         Detailscategory::insert([
+            'category_id'=> $request->category_id,
             'category_name'=>$request->category_name,
             'category_details'=>$request->category_details,
             'category_logo'=>$photoname,

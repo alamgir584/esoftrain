@@ -14,6 +14,7 @@ class IndexController extends Controller
         $product=DB::table('products')->get();
         $company=DB::table('companies')->get();
         $detailscategory=DB::table('detailscategories')->get();
-        return view('frontend.index',compact('product','company','detailscategory'));
+        $singlecategory=DB::table('singlecategories')->get();
+        return view('frontend.index',compact('product','company','detailscategory','singlecategory'));
     }
 }

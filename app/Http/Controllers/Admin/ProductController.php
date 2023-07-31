@@ -22,11 +22,13 @@ class ProductController extends Controller
         return view('admin.product.index', compact('product'));
     }
     function create() {
-        return view('admin.product.create');
+        $category=DB::table('singlecategories')->get();
+        return view('admin.product.create',compact('category'));
     }
     function store(Request $request) 
     {
         $validated = $request->validate([
+            'category_id'=>'required',
             'name' => 'required',
             'client_title' => 'required',
             'client_details' => 'required',
@@ -91,6 +93,7 @@ class ProductController extends Controller
         $result_image= json_encode($images_result);
 
         Product::insert([
+            'category_id'=> $request->category_id,
             'name' => $request->name,
             'client_title' => $request->client_title,
             'client_details' => $request->client_details,

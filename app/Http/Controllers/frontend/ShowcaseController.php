@@ -10,8 +10,11 @@ class ShowcaseController extends Controller
 {
     public function index()
     {
-        $company=DB::table('companies')->get();
         $product=DB::table('products')->get();
-        return view('frontend.showcase',compact('company','product'));
+        $company=DB::table('companies')->get();
+        $detailscategory=DB::table('detailscategories')->get();
+        $singlecategory=DB::table('singlecategories')->get();
+        return view('frontend.showcase',compact('company','product','detailscategory','singlecategory'));
     }
+    
 }

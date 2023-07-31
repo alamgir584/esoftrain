@@ -41,35 +41,30 @@
             <figure><img src="{{asset($row->image_client_main)}}" alt="{{$row->name}}"></figure>
           </div>
           <!-- end col-12 -->
-          <div class="col-md-6 wow fadeInUp">
-            <figure><img src="{{asset($row->image_client)}}" alt="{{$row->name}}"></figure>
-          </div>
-          <!-- end col-6 -->
-          {{-- <div class="col-md-6 wow fadeInUp">
-            <figure><img src="{{asset($row->image_client_main)}}" alt="{{$row->name}}"></figure>
-          </div> --}}
-          <!-- end col-6 -->
+
+          @php
+              $client_images=json_decode($row->image_client);
+          @endphp
+            @foreach ($client_images as $client_image)
+            <div class="col-md-6 wow fadeInUp " >
+                 <figure class="border m-2"><img src="{{asset($client_image)}}" alt="{{$row->name}}"></figure>
+                </div>
+            @endforeach
+
            <div class="col-12 wow fadeInUp" id="case-section-2">
           <h3>Concept</h3>
           <h6>{{$row->concept_title}}</h6>
           <p>{{$row->concept_details}}</p>
             </div>
          <!-- end col-12 -->
+         @php
+         $concept_images=json_decode($row->image_concept);
+        @endphp
+         @foreach ($concept_images as $concept_image)
           <div class="col-lg-3 col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case04.png')}}" alt="Image"></figure>
+            <figure class="border m-2"><img src="{{asset($concept_image)}}" alt="{{$row->name}}"></figure>
           </div>
-          <!-- end col-3 -->
-          <div class="col-lg-3 col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case05.png')}}" alt="Image"></figure>
-          </div>
-          <!-- end col-3 -->
-          <div class="col-lg-3 col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case06.png')}}" alt="Image"></figure>
-          </div>
-          <!-- end col-3 -->
-          <div class="col-lg-3 col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case07.png')}}" alt="Image"></figure>
-          </div>
+          @endforeach
           <!-- end col-3 -->
            <div class="col-12 wow fadeInUp" id="case-section-3">
           <h3>Services</h3>
@@ -87,13 +82,14 @@
           <p>{{$row->result_details}}</p>
             </div>
          <!-- end col-12 -->
+         @php
+         $result_images=json_decode($row->image_result);
+        @endphp
+         @foreach ($result_images as $result_image)
          <div class="col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case02.png')}}" alt="Image"></figure>
+            <figure class="border m-2"><img src="{{asset($result_image)}}" alt="{{$row->name}}"></figure>
           </div>
-          <!-- end col-6 -->
-          <div class="col-md-6 wow fadeInUp">
-            <figure><img src="{{asset('frontend/images/case03.png')}}" alt="Image"></figure>
-          </div>
+          @endforeach
           <!-- end col-6 -->
         </div>
         <!-- end row --> 
