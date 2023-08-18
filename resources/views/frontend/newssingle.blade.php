@@ -3,7 +3,7 @@
 
 <header class="page-header">
     <div class="video-bg">
-        <video src="{{asset('frontend/videos/video.mp4')}}" autoplay muted loop></video>
+        <video src="{{asset('frontend/videos/pexels-ivan-samkov-7252682 (1080p).mp4')}}" autoplay muted loop></video>
     </div>
     <!-- end video-bg -->
     <div class="inner">

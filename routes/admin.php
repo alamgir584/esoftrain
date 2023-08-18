@@ -20,12 +20,12 @@ Route::group(['namespace'=>'App\Http\Controllers\Admin','middleware'=>'is_admin'
             Route::post('/update/{id}','CompanyController@update')->name('company.update');
         });
             //Contact Routes
-        Route::prefix('contact')->group(function () {
-            Route::get('/','ContactController@index')->name('contact.index');
-                    
+        Route::prefix('admin/contact')->group(function () {
+            Route::get('/','ContactController@index')->name('contact.index');  
+            Route::get('/delete/{id}','ContactController@delete')->name('contact.delete');            
         });
         //Product Routes
-        Route::prefix('product')->group(function () {
+        Route::prefix('admin/product')->group(function () {
             Route::get('/','ProductController@index')->name('product.index');
             Route::get('/create','ProductController@create')->name('product.create');
             Route::post('/store','ProductController@store')->name('product.store');

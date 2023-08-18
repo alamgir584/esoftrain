@@ -61,15 +61,15 @@ class DetailscategoryController extends Controller
     }
     public function edit($id)
     {
+        $detailscategory=DB::table('detailscategories')->get();
         $data=Detailscategory::findorfail($id);
-        return view('admin.detailscategory.edit',compact('data'));
+        return view('admin.detailscategory.edit',compact('data','detailscategory'));
     }
     public function update(Request $request,$id)
     {
-        // print_r($request['old_company_logo']);
-        // die;
 
     	$data=array();
+        $data['category_id']=$request->category_id;
     	$data['category_name']=$request->category_name;
         $data['category_details']=$request->category_details;
     	if ($request->category_logo)
@@ -89,7 +89,7 @@ class DetailscategoryController extends Controller
 		  $data['category_logo']=$request->old_category_logo;
 	      DB::table('detailscategories')->where('id',$id)->update($data);
 	      $notification=array('messege' => 'Category Details Update!', 'alert-type' => 'success');
-	      return redirect()->back()->with($notification);
+	      return redirect()->back()->with($notification);         
     	}
     }
 }

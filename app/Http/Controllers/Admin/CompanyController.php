@@ -18,8 +18,8 @@ class CompanyController extends Controller
         $this->middleware('auth');
     }
     function index(){
-        $data=Company::paginate(5);//for pagination
-        //$data=DB::table('companies')->get();
+        //$data=Company::paginate(5);//for pagination
+        $data=DB::table('companies')->get();
         return view('admin.company.index',compact('data'));
     }
     function create() {
@@ -33,7 +33,8 @@ class CompanyController extends Controller
         ]);
   	  $photo=$request->company_logo;
     	  $photoname=uniqid().'.'.$photo->getClientOriginalName();
-    	  Image::make($photo)->resize(134,134)->save('files/company/'.$photoname);
+    	  Image::make($photo)->save('files/company/'.$photoname);
+        //   ->resize(134,134)
     	  $data['company_logo']='files/company/'.$photoname;
 
         Company::insert([
@@ -43,7 +44,6 @@ class CompanyController extends Controller
         $notification=array('messege' =>'Company Inserted' ,'alert-type'=>'success' );
         return redirect()->back()->with($notification);
     }
-
 
     public function delete($id)
     {
@@ -59,7 +59,6 @@ class CompanyController extends Controller
     }
 
 
-
     public function edit($id)
     {
         $data=Company::findorfail($id);
@@ -67,9 +66,6 @@ class CompanyController extends Controller
     }
     public function update(Request $request,$id)
     {
-        // print_r($request['old_company_logo']);
-        // die;
-
     	$data=array();
     	$data['company_name']=$request->company_name;
     	if ($request->company_logo)
@@ -80,7 +76,8 @@ class CompanyController extends Controller
     	      }
     		  $photo=$request->company_logo;
               $photoname = uniqid()."-".$request->file('company_logo')->getClientOriginalName();
-    	      Image::make($photo)->resize(134,134)->save('files/company/'.$photoname);
+    	      Image::make($photo)->save('files/company/'.$photoname);
+            //   ->resize(134,134)
     	      $data['company_logo']=$photoname;
     	      DB::table('companies')->where('id',$id)->update($data);
     	      $notification=array('messege' => 'Company Update!', 'alert-type' => 'success');

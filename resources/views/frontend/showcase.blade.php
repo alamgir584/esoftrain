@@ -2,7 +2,7 @@
 @section('content')
 <header class="page-header">
     <div class="video-bg">
-        <video src="videos/video.mp4" autoplay muted loop></video>
+        <video src="{{asset('frontend/videos/design_-_48420 (1440p).mp4')}}" autoplay muted loop></video>
     </div>
     <!-- end video-bg -->
     <div class="inner">
@@ -37,8 +37,6 @@
             <li><a href="javascript:void(0);" data-filter="*" class="current">ALL</a></li>
 
             @foreach ($singlecategory as $row)
-                
-           
             <li><a href="javascript:void(0);" data-filter="{{'.'.$row->id}}">{{$row->category_name}}</a></li>
             @endforeach
         </ol>

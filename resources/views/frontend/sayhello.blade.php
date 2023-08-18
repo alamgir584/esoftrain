@@ -3,7 +3,7 @@
 
 <header class="page-header">
     <div class="video-bg">
-        <video src="videos/video.mp4" autoplay muted loop></video>
+        <video src="{{asset('frontend/videos/design_-_48420 (1440p).mp4')}}" autoplay muted loop></video>
     </div>
     <!-- end video-bg -->
     <div class="inner">
@@ -27,7 +27,7 @@
         <div class="col-md-6">
         <div class="contact-box">
             <span>Phone :</span>
-            <a href="#">+38 044 364 55 19</a>
+            <a href="#">+88 01762 762851</a>
             </div>
             <!-- end contact-box -->
         </div>
@@ -35,7 +35,7 @@
         <div class="col-md-6">
         <div class="contact-box">
             <span>E-mail :</span>
-            <a href="#">+38 044 364 55 19</a>
+            <a href="#">info@esoftrain.com</a>
             </div>
             <!-- end contact-box -->
         </div>
@@ -44,12 +44,11 @@
         <div class="contact-box">
             <span>Address :</span>
        <p>
-        Contornio Ave Kunsgatan 4<br>
-        41247 Luxembord<br>
-        074-753 5875
-           </p>
-           <a href="#" class="map-link" data-toggle="modal" data-target="#map-box">Click for map</a>
-            </div>
+           46/4 Dhanmondhi Jigatola<br>
+           Dhaka 1209, Bangladesh<br>
+        </p>
+          {{-- <a href="#" class="map-link" data-toggle="modal" data-target="#map-box">Click for map</a> --}}
+          </div>
             <!-- end contact-box -->
         </div>
         <!-- end col-12 -->

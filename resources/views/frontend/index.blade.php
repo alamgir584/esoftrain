@@ -84,9 +84,11 @@
           <li class="wow fadeInUp {{$row->category_id}}">
             <figure data-tilt> <img src="{{asset($row->thumbnail)}}" alt="{{$row->name}}" class="thumb">
               {{-- ai image path bola dewa ache tai avabe --}}
-              <figcaption> <img src="{{asset('frontend/images/logo-brand.png')}}" alt="Image" class="brand">
+              <figcaption> 
+                {{-- <img src="{{asset('frontend/images/logo-brand.png')}}" alt="Image" class="brand"> --}}
                 <h3>{{$row->name}}</h3>
-                <small>UI-UX Design, WordPress</small> <a href="{{route('casedetails',$row->id)}}">CASE DETAILS</a> </figcaption>
+                {{-- <small>UI-UX Design, WordPress</small>  --}}
+                <a href="{{route('casedetails',$row->id)}}">CASE DETAILS</a> </figcaption>
             </figure>
           </li>
           @endforeach
@@ -106,24 +108,11 @@
           <!-- end col-5 -->
           <div class="col-lg-7">
             <div class="row inner">
-
-              {{-- <ul>
-                @foreach ($product as $row)
-                 <li class="wow fadeInUp {{$row->category_id}}">
-                   <figure data-tilt> <img src="{{asset($row->thumbnail)}}" alt="{{$row->name}}" class="thumb">
-                     <figcaption> <img src="{{asset('frontend/images/logo-brand.png')}}" alt="Image" class="brand">
-                       <h3>{{$row->name}}</h3>
-                       <small>UI-UX Design, WordPress</small> <a href="{{route('casedetails',$row->id)}}">CASE DETAILS</a> </figcaption>
-                   </figure>
-                 </li>
-                 @endforeach
-               </ul> --}}
-
               @foreach ($detailscategory as $row)
               <div class="col-md-4 wow fadeInUp"> <img src="{{asset('files/category/'.$row->category_logo)}}" alt="{{$row->category_name}}">
                 <h4>{{$row->category_name}}</h4>
                 <p>{{$row->category_details}}</p>
-                <a href="{{route('showcase',$row->category_id)}}">LEARN MORE</a> 
+                <a href="{{route('learn.more',['details_category_id'=>$row->id])}}">LEARN MORE</a>
               </div>
               <!-- end col-4 -->
               @endforeach
@@ -141,15 +130,16 @@
     
     <section class="full-media-content bg-image" data-background="{{asset('frontend/images/hero01.jpg')}}">
       <div class="sides">
-        <figure class="wow fadeInLeft"><img src="{{asset('frontend/images/office01.jpg')}}" alt="Image"></figure>
+        <figure class="wow fadeInLeft"><img src="{{asset('frontend/images/web-design.jpg')}}" alt="Image"></figure>
       </div>
       <!-- end sides -->
       <div class="sides inner-content">
         <div class="inner wow fadeInUp">
           <h5>New Media Digital Agency</h5>
           <h2>INNOVASION</h2>
-          <p>Unicord is a creative digital agency, composed of creative designers & experienced developers. You’ll have your own individual apartment and facilities which are inspired by the luxurious life you want to live.</p>
-          <a href="#">TAKE A LOOK</a> </div>
+          <p>Esoftrain is a creative digital agency, composed of creative designers & experienced developers. You’ll have your own individual apartment and facilities which are inspired by the luxurious life you want to live.</p>
+          {{-- <a href="#">TAKE A LOOK</a>  --}}
+        </div>
         <!-- end inner --> 
       </div>
       <!-- end sides --> 

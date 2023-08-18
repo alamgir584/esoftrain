@@ -3,7 +3,7 @@
 
 <header class="page-header">
     <div class="video-bg">
-      <video src="{{asset('frontned/videos/video.mp4')}}" autoplay muted loop></video>
+      <video src="{{asset('frontned/videos/design_-_48420 (1440p).mp4')}}" autoplay muted loop></video>
     </div>
     <!-- end video-bg -->
     <div class="inner">

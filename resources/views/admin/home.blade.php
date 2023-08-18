@@ -2,100 +2,12 @@
 @section('admin_content')
     
 <!-- Content Start -->
-<div class="content">
-        
+<div class="content">    
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-        <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-            <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-        </a>
-        <a href="#" class="sidebar-toggler flex-shrink-0">
-            <i class="fa fa-bars"></i>
-        </a>
-        <form class="d-none d-md-flex ms-4">
-            <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-        </form>
-        <div class="navbar-nav align-items-center ms-auto">
-            {{-- <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="fa fa-envelope me-lg-2"></i>
-                    <span class="d-none d-lg-inline-flex">Message</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle" src="{{asset('backend/img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
-                            <div class="ms-2">
-                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                <small>15 minutes ago</small>
-                            </div>
-                        </div>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle" src="{{asset('backend/img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
-                            <div class="ms-2">
-                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                <small>15 minutes ago</small>
-                            </div>
-                        </div>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle" src="{{asset('backend/img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
-                            <div class="ms-2">
-                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                <small>15 minutes ago</small>
-                            </div>
-                        </div>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item text-center">See all message</a>
-                </div>
-            </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="fa fa-bell me-lg-2"></i>
-                    <span class="d-none d-lg-inline-flex">Notificatin</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">
-                        <h6 class="fw-normal mb-0">Profile updated</h6>
-                        <small>15 minutes ago</small>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item">
-                        <h6 class="fw-normal mb-0">New user added</h6>
-                        <small>15 minutes ago</small>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item">
-                        <h6 class="fw-normal mb-0">Password changed</h6>
-                        <small>15 minutes ago</small>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item text-center">See all notifications</a>
-                </div>
-            </div> --}}
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <img class="rounded-circle me-lg-2" src="{{asset('backend/img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">
-                    <span class="d-none d-lg-inline-flex">{{Auth::user()->name}}</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                    {{-- <a href="#" class="dropdown-item">My Profile</a> --}}
-                    <a href="{{route('admin.logout')}}" class="dropdown-item">Log Out</a>
-                    {{-- <a href="#" class="dropdown-item">Password Change</a> --}}
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('admin.navbar.topbar');
     <!-- Navbar End -->
-
     <!-- Sale & Revenue Start -->
-    <div class="container-fluid pt-4 px-4">
+    {{-- <div class="container-fluid pt-4 px-4">
         <div class="row g-4">
             <div class="col-sm-6 col-xl-3">
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
@@ -134,12 +46,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Sale & Revenue End -->
 
-
     <!-- Sales Chart Start -->
-    <div class="container-fluid pt-4 px-4">
+    {{-- <div class="container-fluid pt-4 px-4">
         <div class="row g-4">
             <div class="col-sm-12 col-xl-6">
                 <div class="bg-secondary text-center rounded p-4">
@@ -160,12 +71,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Sales Chart End -->
 
-
     <!-- Recent Sales Start -->
-    <div class="container-fluid pt-4 px-4">
+    {{-- <div class="container-fluid pt-4 px-4">
         <div class="bg-secondary text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Recent Salse</h6>
@@ -234,12 +144,11 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Recent Sales End -->
 
-
     <!-- Widgets Start -->
-    <div class="container-fluid pt-4 px-4">
+    {{-- <div class="container-fluid pt-4 px-4">
         <div class="row g-4">
             <div class="col-sm-12 col-md-6 col-xl-4">
                 <div class="h-100 bg-secondary rounded p-4">
@@ -356,10 +265,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Widgets End -->
                 <!-- Footer Start -->
-                <div class="container-fluid pt-4 px-4">
+                {{-- <div class="container-fluid pt-4 px-4">
                     <div class="bg-secondary rounded-top p-4">
                         <div class="row">
                             <div class="col-12 col-sm-6 text-center text-sm-start">
@@ -368,7 +277,7 @@
     
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Footer End -->
 </div>
 <!-- Content End -->

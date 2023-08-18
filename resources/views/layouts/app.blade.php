@@ -13,7 +13,8 @@
 <!-- <title>Unicord | Creative Portfolio for Freelancers & Agencies</title> -->
     <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>{{ config('app.name', 'Laravel') }}</title>
+<title>esoftrain</title>
+{{-- <link href="{{asset('backend/imgages/logo.png')}}" rel="icon"> --}}
 <meta name="author" content="Themezinho">
 <meta name="description" content="Unicord | Creative Portfolio for Freelancers & Agencies">
 <meta name="keywords" content="creative, works, showcase, portfolio, highlight, projects, parallax, agency, digital, studio, css, animation, transition, svg, html, css">
@@ -35,11 +36,12 @@
 <meta name="twitter:image" content="http://www.themezinho.net/unicord/preview.png">
 
 <!-- FAVICON FILES -->
-<link href="{{asset('frontend/ico/apple-touch-icon-144-precomposed.png')}}" rel="apple-touch-icon" sizes="144x144">
+{{-- <link href="{{asset('frontend/ico/apple-touch-icon-144-precomposed.png')}}" rel="apple-touch-icon" sizes="144x144">
 <link href="{{asset('frontend/ico/apple-touch-icon-114-precomposed.png')}}" rel="apple-touch-icon" sizes="114x114">
 <link href="{{asset('frontend/ico/apple-touch-icon-72-precomposed.png')}}" rel="apple-touch-icon" sizes="72x72">
 <link href="{{asset('frontend/ico/apple-touch-icon-57-precomposed.png')}}" rel="apple-touch-icon">
-<link href="{{asset('frontend/ico/favicon.png')}}" rel="shortcut icon">
+<link href="{{asset('frontend/ico/favicon.png')}}" rel="shortcut icon"> --}}
+
 
 <!-- CSS FILES -->
 <link rel="stylesheet" href="{{asset('frontend/css/font-awesome.min.css')}}">
@@ -107,7 +109,7 @@
 
 
   <nav class="navbar">
-    <div class="logo"> <a href="{{url('/')}}"><img src="{{asset('frontend/images/esoftrainLogo.png')}}" alt="Image"></a> </div>
+    <div class="logo"> <a href="{{url('/')}}"><img src="{{asset('frontend/images/logo.png')}}" alt="Image"></a> </div>
     <!-- end logo -->
     <div class="email-us">Say <a href="{{route('sayhello')}}"><span>hello</span>@esoftrain.com</a></div>
     <!-- end email-us -->
